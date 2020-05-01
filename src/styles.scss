@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.toggle-buttons-centered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+mat-button-toggle-group {
+  margin-bottom: 50px;
+}
+
+mat-button-toggle {
+  width: 120px;
+}
+
+.mat-tab-body-content {
+  height: 100% !important;
+  display: flex !important;
+  overflow: auto !important;
+  flex-direction: column !important;
+}
+
+pre.language-typescript {
+  max-height: 600px;
+}
+
+.mat-tab-label-active {
+  font-weight: bold;
+  color: black;
+}
