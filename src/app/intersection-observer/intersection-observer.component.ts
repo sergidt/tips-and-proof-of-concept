@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
+// https://netbasal.com/make-your-angular-directive-functionality-lazy-344a4bd9434b
 @Component({
   selector: 'intersection-observer',
   template: `
-    <mat-list>
-      <mat-list-item *ngFor="let item of items" hovering>{{ item.label }}</mat-list-item>
-    </mat-list>
+    <button mat-raised-button (click)="firstExample = !firstExample">Switch example</button>
+
+    <ng-container *ngIf="firstExample">
+      <h2>Example 1</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let item of items" hovering>{{ item.label }}</mat-list-item>
+      </mat-list>
+    </ng-container>
+
+    <ng-container *ngIf="!firstExample">
+      <h2>Example 2</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let item of items" hovering2>{{ item.label }}</mat-list-item>
+      </mat-list>
+    </ng-container>
   `,
   styles: [
     `
@@ -26,6 +38,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   ],
 })
 export class IntersectionObserverComponent {
+  firstExample = true;
+
   items = Array.from({ length: 500 }, (_, i) => ({
     id: i,
     label: `Value ${i}`,

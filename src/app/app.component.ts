@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 
 export enum ComponentList {
-    Home = 'Home'
+  Home = 'Home',
+  IntersectionObserver = 'Intersection Observer',
 }
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent  {
-    selectedComponent: ComponentList = ComponentList.Home;
-    components: Array<ComponentList> = [];
+export class AppComponent {
+  ComponentList = ComponentList;
+  selectedComponent: ComponentList = ComponentList.Home;
+  components: Array<ComponentList> = [ComponentList.IntersectionObserver];
 }

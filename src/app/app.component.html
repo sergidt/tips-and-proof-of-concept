@@ -8,12 +8,13 @@
 
   <div class="route-links">
     <div *ngFor="let component of components" class="menu-item">
-      <div>{{component}}</div>
+      <div (click)="selectedComponent = component">{{component}}</div>
       <div [class.arrow-up]="selectedComponent === component"></div>
     </div>
   </div>
 </mat-toolbar>
 
 <div class="content" role="main">
-  <app-home-component></app-home-component>
+  <home-component *ngIf="selectedComponent === ComponentList.Home"></home-component>
+  <intersection-observer *ngIf="selectedComponent === ComponentList.IntersectionObserver"></intersection-observer>
 </div>
